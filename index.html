@@ -129,8 +129,10 @@
             display: inline-flex;
             align-items: center;
             gap: 1rem;
-            background: var(--gold);
-            color: #000;
+            background: transparent;
+            color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
             padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
@@ -146,10 +148,8 @@
         }
 
         .app-store-btn:hover {
-            background: transparent;
-            color: var(--gold);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            background: var(--gold);
+            color: #000;
         }
 
         .app-store-btn:hover img {
@@ -451,7 +451,7 @@
                                     Discover, save, and share your favorite dining experiences.
                                     Build your personal wanderlist and never forget a great meal again.
                                 </p>
-                                <a href="#" className="app-store-btn">
+                                <a href="flavortrail://explore" className="app-store-btn">
                                     <img src="Assets/logo1.png" alt="Download" /> Download on App Store
                                 </a>
                             </div>
@@ -510,7 +510,7 @@
                                     </p>
                                 </div>
                                 <div className="feature-card">
-                                    <div className="feature-icon">🗺️</div>
+                                    <div className="feature-icon"><img src="Assets/map.jpg" alt="map" /></div>
                                     <h3>Interactive Map & Collections</h3>
                                     <p>
                                         Visualize your wanderlist on an interactive map. Organize favorite spots into custom collections
@@ -526,7 +526,7 @@
                         <p>
                             Join thousands of food lovers tracking and sharing their culinary adventures.
                         </p>
-                        <a href="#" className="app-store-btn">
+                        <a href="flavortrail://explore" className="app-store-btn">
                             <img src="Assets/logo1.png" alt="Download" /> Download Now
                         </a>
                     </section>
