@@ -391,32 +391,32 @@
 
         function App() {
             const [currentPage, setCurrentPage] = useState(() => {
-                const hash = window.location.hash;
-                if (hash === '#/privacyPolicy') return 'privacy';
-                if (hash === '#/terms') return 'terms';
+                const path = window.location.pathname;
+                if (path.includes('/privacyPolicy')) return 'privacy';
+                if (path.includes('/terms')) return 'terms';
                 return 'home';
             });
 
             const navigateTo = (page) => {
                 setCurrentPage(page);
                 const routes = {
-                    home: '#/',
-                    privacy: '#/privacyPolicy',
-                    terms: '#/terms'
+                    home: '/home',
+                    privacy: '/privacyPolicy',
+                    terms: '/terms'
                 };
-                window.location.hash = routes[page];
+                window.history.pushState({}, '', routes[page]);
                 window.scrollTo(0, 0);
             };
 
             React.useEffect(() => {
-                const handleHashChange = () => {
-                    const hash = window.location.hash;
-                    if (hash === '#/privacyPolicy') setCurrentPage('privacy');
-                    else if (hash === '#/terms') setCurrentPage('terms');
+                const handlePopState = () => {
+                    const path = window.location.pathname;
+                    if (path.includes('/privacyPolicy')) setCurrentPage('privacy');
+                    else if (path.includes('/terms')) setCurrentPage('terms');
                     else setCurrentPage('home');
                 };
-                window.addEventListener('hashchange', handleHashChange);
-                return () => window.removeEventListener('hashchange', handleHashChange);
+                window.addEventListener('popstate', handlePopState);
+                return () => window.removeEventListener('popstate', handlePopState);
             }, []);
 
             return (
@@ -506,7 +506,7 @@
                                     <h3>AI-Powered Recommendations</h3>
                                     <p>
                                         Get personalized daily picks and smart suggestions on what to order at each restaurant.
-                                        Discover top nearby spots by cuisine type with intelligent recommendations
+                                        Discover top nearby spots by cuisine type with intelligent recommendations.
                                     </p>
                                 </div>
                                 <div className="feature-card">
