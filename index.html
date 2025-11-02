@@ -404,8 +404,8 @@
                     window.history.replaceState({}, '', window.location.pathname);
                 } else {
                     const routes = {
-                        privacy: '/privacyPolicy',
-                        terms: '/terms'
+                        privacy: '#/privacyPolicy',
+                        terms: '#/terms'
                     };
                     window.location.hash = routes[page];
                 }
@@ -605,6 +605,8 @@
                         <li>Sightengine: Automated content moderation (images analyzed temporarily, not stored)</li>
                         <li>Yelp: Restaurant information and discovery</li>
                         <li>Apple/Google Maps: Location services and navigation</li>
+                        <li>Groq AI: AI-powered recommendations and personalized suggestions</li>
+                        <li>Tavily REST API: Enhanced search and discovery features</li>
                     </ul>
                     <p>These providers have access only to information necessary for their services. We do not sell your personal information.</p>
 
@@ -748,7 +750,7 @@
                     <h2>Third-Party Services</h2>
                     <p>
                         FlavorTrail integrates with third-party services including Yelp, Google/Apple Maps, Firebase, Cloudinary,
-                        and Sightengine. Your use of these services is subject to their respective terms and privacy policies.
+                        Sightengine, Groq AI, and Tavily REST API. Your use of these services is subject to their respective terms and privacy policies.
                     </p>
 
                     <h2>User Conduct</h2>
