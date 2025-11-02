@@ -404,8 +404,8 @@
                     window.history.replaceState({}, '', window.location.pathname);
                 } else {
                     const routes = {
-                        privacy: '#/privacyPolicy',
-                        terms: '#/terms'
+                        privacy: '/privacyPolicy',
+                        terms: '/terms'
                     };
                     window.location.hash = routes[page];
                 }
